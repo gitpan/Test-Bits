@@ -1,6 +1,9 @@
 package Test::Bits;
 {
-  $Test::Bits::VERSION = '0.01';
+  $Test::Bits::VERSION = '0.02';
+}
+BEGIN {
+  $Test::Bits::AUTHORITY = 'cpan:DROLSKY';
 }
 
 use strict;
@@ -17,6 +20,7 @@ our $Builder;
 
 my $UsageErrorBase
     = 'bits_is() should be passed a scalar of binary data and an array reference of numbers.';
+
 
 sub bits_is ($$;$) {
     my $got    = shift;
@@ -141,7 +145,7 @@ sub _check_expect {
 
 # ABSTRACT: Provides a bits_is() subroutine for testing binary data
 
-
+__END__
 
 =pod
 
@@ -151,7 +155,7 @@ Test::Bits - Provides a bits_is() subroutine for testing binary data
 
 =head1 VERSION
 
-version 0.01
+version 0.02
 
 =head1 SYNOPSIS
 
@@ -184,6 +188,8 @@ diagnostic will look like this:
 
 Note that the bytes are numbered starting from 0 in the diagnostic output.
 
+=for Pod::Coverage bits_is
+
 =head1 USAGE
 
 The C<bits_is()> subroutine takes two required arguments and an optional test
@@ -211,14 +217,10 @@ Dave Rolsky <autarch@urth.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2012 by MaxMind, Inc..
+This software is Copyright (c) 2013 by MaxMind, Inc..
 
 This is free software, licensed under:
 
   The Artistic License 2.0 (GPL Compatible)
 
 =cut
-
-
-__END__
-
